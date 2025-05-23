@@ -9,9 +9,15 @@
     },
     {
       "name": "_macros",
+<<<<<<< HEAD
       "rootUri": "file:///home/arielccjr/Desktop/flutter/bin/cache/dart-sdk/pkg/_macros",
       "packageUri": "lib/",
       "languageVersion": "3.4"
+=======
+      "rootUri": "file:///home/arielccjr/Programming/DMIT2504%20-%20Mobile%20Application%20Development/dart-sdk/pkg/_macros",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+>>>>>>> 00fc0f06775dd5070bf396d9e9d84064c6e9330d
     },
     {
       "name": "analyzer",
@@ -314,10 +320,15 @@
       "languageVersion": "3.4"
     }
   ],
+<<<<<<< HEAD
   "generated": "2025-05-12T23:14:28.851887Z",
   "generator": "pub",
   "generatorVersion": "3.7.2",
   "flutterRoot": "file:///home/arielccjr/Desktop/flutter",
   "flutterVersion": "3.29.3",
+=======
+  "generator": "pub",
+  "generatorVersion": "3.8.0-278.4.beta",
+>>>>>>> 00fc0f06775dd5070bf396d9e9d84064c6e9330d
   "pubCache": "file:///home/arielccjr/.pub-cache"
 }
