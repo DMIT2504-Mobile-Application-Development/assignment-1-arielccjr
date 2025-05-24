@@ -55,17 +55,56 @@ class CurrentWeather {
 
   //     - setter for description must ensure description is not empty
   //       - throw an `Exception` with message 'Description cannot be empty'
+  set description(String value) {
+    if (value.isEmpty) {
+      throw Exception('Description cannot be empty');
+    }
+    _description = value;
+  }
+
   //     - setter for currentTemp must ensure currentTemp is between -100 and 100
   //       - throw an `Exception` with message 'Temperature must be between -100 and 100'
-  //     - setter for currentTemp must ensure currentTime is not in the future
+  set currentTemp(double value) {
+    if (value < -100 || value > 100) {
+      throw Exception('Temperature must be between -100 and 100');
+    }
+    _currentTemp = value;
+  } 
+  
+  //     - setter for currentTime must ensure currentTime is not in the future
   //       - throw an `Exception` with message 'Current time cannot be in the future'
+  set currentTime(DateTime value) {
+    if (value.isAfter(DateTime.now())) {
+      throw Exception('Current time cannot be in the future');
+    }
+    _currentTime = value;
+  }
+
   //    - setter for sunrise must ensure sunrise is on the same day as currentTemp and not after sunrise
   //      - throw an `Exception` with message 'Sunrise must be on the same day as current time' for the former
+  set sunrise(DateTime value) {
+    if (value.day != _currentTime.day) {
+      throw Exception('Sunrise must be on the same day as the current time');
+    }
   //      - throw an `Exception` with message 'Sunrise cannot be after sunset' for the latter
+    if (value.isAfter(_sunset)) {
+      throw Exception('Sunrise cannot be after sunset');
+    }
+    _sunrise = value;
+  }
+
   //    - setter for sunset must ensure sunset is on the same day as currentTemp and not before sunrise
   //      - throw an `Exception` with message 'Sunset must be on the same day as current time' for the former
+  set sunset(DateTime value) {
+    if (value.day != currentTime.day) {
+      throw Exception('Sunset must be on the same day as current time');
+    }
   //      - throw an `Exception` with message 'Sunset cannot be before sunset' for the latter
-
+    if (value.isBefore(_sunrise)) {
+      throw Exception('Sunset cannot be before sunrise');
+    } 
+    _sunset = value;
+  }
 
 }
 
