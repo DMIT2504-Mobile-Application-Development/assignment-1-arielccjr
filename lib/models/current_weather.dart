@@ -44,23 +44,30 @@ class CurrentWeather {
   DateTime get sunrise => _sunrise;
   DateTime get sunset => _sunset;
 
-}
+  //     - setter for city must ensure city is not empty
+  //       - throw an `Exception` with message 'City cannot be empty'
+  set city(String value) {
+    if (value.isEmpty) {
+      throw Exception('City cannot be empty');
+    }
+    _city = value;
+  } 
 
-//     
-//     - setter for city must ensure city is not empty
-//       - throw an `Exception` with message 'City cannot be empty'
-//     - setter for description must ensure description is not empty
-//       - throw an `Exception` with message 'Description cannot be empty'
-//     - setter for currentTemp must ensure currentTemp is between -100 and 100
-//       - throw an `Exception` with message 'Temperature must be between -100 and 100'
-//     - setter for currentTemp must ensure currentTime is not in the future
-//       - throw an `Exception` with message 'Current time cannot be in the future'
-//    - setter for sunrise must ensure sunrise is on the same day as currentTemp and not after sunrise
-//      - throw an `Exception` with message 'Sunrise must be on the same day as current time' for the former
-//      - throw an `Exception` with message 'Sunrise cannot be after sunset' for the latter
-//    - setter for sunset must ensure sunset is on the same day as currentTemp and not before sunrise
-//      - throw an `Exception` with message 'Sunset must be on the same day as current time' for the former
-//      - throw an `Exception` with message 'Sunset cannot be before sunset' for the latter
+  //     - setter for description must ensure description is not empty
+  //       - throw an `Exception` with message 'Description cannot be empty'
+  //     - setter for currentTemp must ensure currentTemp is between -100 and 100
+  //       - throw an `Exception` with message 'Temperature must be between -100 and 100'
+  //     - setter for currentTemp must ensure currentTime is not in the future
+  //       - throw an `Exception` with message 'Current time cannot be in the future'
+  //    - setter for sunrise must ensure sunrise is on the same day as currentTemp and not after sunrise
+  //      - throw an `Exception` with message 'Sunrise must be on the same day as current time' for the former
+  //      - throw an `Exception` with message 'Sunrise cannot be after sunset' for the latter
+  //    - setter for sunset must ensure sunset is on the same day as currentTemp and not before sunrise
+  //      - throw an `Exception` with message 'Sunset must be on the same day as current time' for the former
+  //      - throw an `Exception` with message 'Sunset cannot be before sunset' for the latter
+
+
+}
 
 
 //  - Must have a factory constructor that accepts a single `dynamic` data param representing the OpenWeather data object for the current weather
