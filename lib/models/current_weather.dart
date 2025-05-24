@@ -116,13 +116,21 @@ class CurrentWeather {
     final sunrise = DateTime.fromMillisecondsSinceEpoch(data['sys']['sunrise'] * 1000, isUtc: true).toLocal();
     final sunset = DateTime.fromMillisecondsSinceEpoch(data['sys']['sunset'] * 1000, isUtc: true).toLocal();
 
-    return CurrentWeather
+    return CurrentWeather(
+      city: city,
+      description: description,
+      currentTemp: currentTemp,
+      currentTime: currentTime,
+      sunrise: sunrise,
+      sunset: sunset,
+    );
   }
-
-}
-
-
 //  - Must override the `toString()` method to return a string in the following format:
 //    - `City: <city>, Description: <description>, Current Temperature: <currentTemp>, Current Time: <currentTime>, Sunrise: <sunrise>, Sunset: <sunset>'` where the angle brackets/values must be replaced with the actual member values.
+  @override
+  String toString() {
+    return 'City: $_city, Description: $_description, Current Temperature: $_currentTemp, Current Time: $_currentTime, Sunrise: $_sunrise, Sunset: $_sunset';
+  }
+}
 
 //  - **NOTE: you will need to think about validation for the sunrise and sunset members in the constructor and the setters, since one necessisarily relies of the value of the other.**
