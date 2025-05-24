@@ -13,11 +13,33 @@ class CurrentWeather {
   DateTime _currentTime;  //     - currentTime (date time)
   DateTime _sunrise;      //     - sunrise (date time)
   DateTime _sunset;       //     - sunset (date time)
-}
 
+  CurrentWeather({ //  - Must have a generative constructor with required named params for each of the members
+    required String city,
+    required String description,
+    required double currentTemp,
+    required DateTime currentTime,
+    required DateTime sunrise,
+    required DateTime sunset,
+  })  : _city = '',
+        _description = '',
+        _currentTemp = 0.0,
+        _currentTime = DateTime.now(),
+        _sunrise = DateTime.now(),
+        _sunset = DateTime.now() {
+    this.city = city;
+    this.description = description;
+    this.currentTemp = currentTemp;
+    this.currentTime = currentTime;
+    this.sunrise = sunrise;
+    this.sunset = sunset;
+  }
+
+}
 
 //   - The following getters and setters for the private members
 //     - all private members must have a getter
+//     
 //     - setter for city must ensure city is not empty
 //       - throw an `Exception` with message 'City cannot be empty'
 //     - setter for description must ensure description is not empty
