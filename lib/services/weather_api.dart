@@ -27,6 +27,6 @@ Future<dynamic> getWeatherForCity({required String city}) async {
 
     // - If an exception occurs when accessing the endpoint, throw an `Exception` with a message in the following format: `There was a problem with the request: <original exception message>`.
   } catch (e) {
-    throw Exception('There was a problem with the request: ${e.toString()}');
+    throw Exception('There was a problem with the request: $e');
   }
 }
