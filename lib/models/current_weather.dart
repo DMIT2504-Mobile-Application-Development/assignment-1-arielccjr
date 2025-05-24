@@ -14,7 +14,9 @@ class CurrentWeather {
   DateTime _sunrise;      //     - sunrise (date time)
   DateTime _sunset;       //     - sunset (date time)
 
-  CurrentWeather({ //  - Must have a generative constructor with required named params for each of the members
+    //  - Must have a generative constructor with required named params for each of the members
+//  - **NOTE: you will need to think about validation for the sunrise and sunset members in the constructor and the setters, since one necessisarily relies of the value of the other.**
+  CurrentWeather({ 
     required String city,
     required String description,
     required double currentTemp,
@@ -132,5 +134,3 @@ class CurrentWeather {
     return 'City: $_city, Description: $_description, Current Temperature: $_currentTemp, Current Time: $_currentTime, Sunrise: $_sunrise, Sunset: $_sunset';
   }
 }
-
-//  - **NOTE: you will need to think about validation for the sunrise and sunset members in the constructor and the setters, since one necessisarily relies of the value of the other.**
