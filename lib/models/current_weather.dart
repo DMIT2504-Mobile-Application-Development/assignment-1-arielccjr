@@ -86,7 +86,7 @@ class CurrentWeather {
   //      - throw an `Exception` with message 'Sunrise must be on the same day as current time' for the former
   set sunrise(DateTime value) {
     if (value.day != _currentTime.day) {
-      throw Exception('Sunrise must be on the same day as the current time');
+      throw Exception('Sunrise must be on the same day as current time');
     }
   //      - throw an `Exception` with message 'Sunrise cannot be after sunset' for the latter
     if (value.isAfter(_sunset)) {
