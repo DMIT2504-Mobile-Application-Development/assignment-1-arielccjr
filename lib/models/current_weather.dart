@@ -110,7 +110,7 @@ class CurrentWeather {
 
 //  - Must have a factory constructor that accepts a single `dynamic` data param representing the OpenWeather data object for the current weather
 //    - The method must parse out the required fields for the generative constructor and use the generative constructor to produce the object to return
-  factory CurrentWeather.fromJson(dynamic data) {
+  factory CurrentWeather.fromOpenWeatherData(dynamic data) {
     final city = data['name'];
     final description = data['weather'][0]['description'];
     final currentTemp = data['main']['temp'].toDouble();
