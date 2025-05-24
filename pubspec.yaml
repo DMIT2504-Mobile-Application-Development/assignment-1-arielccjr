@@ -8,6 +8,8 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  flutter: 
+    sdk: flutter
   http: ^1.2.2
 
 dev_dependencies:
