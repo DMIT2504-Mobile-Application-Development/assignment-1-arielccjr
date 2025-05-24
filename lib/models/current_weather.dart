@@ -106,11 +106,21 @@ class CurrentWeather {
     _sunset = value;
   }
 
-}
-
-
 //  - Must have a factory constructor that accepts a single `dynamic` data param representing the OpenWeather data object for the current weather
 //    - The method must parse out the required fields for the generative constructor and use the generative constructor to produce the object to return
+  factory CurrentWeather.fromJson(dynamic date) {
+    final city = data['name'];
+    final description = data['weather'][0]['description'];
+    final currentTemp = data['main']['temp'].toDouble();
+    final currentTime = DateTime.fromMillisecondsSinceEpoch(data['dt'] * 1000, isUtc: true).toLocal();
+    final sunrise = DateTime.fromMillisecondsSinceEpoch(data['sys']['sunrise'] * 1000, isUtc: true).toLocal();
+    final sunset = DateTime.fromMillisecondsSinceEpoch(data['sys']['sunset'] * 1000, isUtc: true).toLocal();
+
+    return CurrentWeather
+  }
+
+}
+
 
 //  - Must override the `toString()` method to return a string in the following format:
 //    - `City: <city>, Description: <description>, Current Temperature: <currentTemp>, Current Time: <currentTime>, Sunrise: <sunrise>, Sunset: <sunset>'` where the angle brackets/values must be replaced with the actual member values.
