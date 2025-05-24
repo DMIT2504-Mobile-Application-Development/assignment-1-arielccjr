@@ -33,8 +33,8 @@ class CurrentWeather {
     this.description = description;
     this.currentTemp = currentTemp;
     this.currentTime = currentTime;
-    this.sunrise = sunrise;
     this.sunset = sunset;
+    this.sunrise = sunrise;
   }
 
   //   - The following getters and setters for the private members
