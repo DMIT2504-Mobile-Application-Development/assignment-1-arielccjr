@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 // - The following requirements must be met:
   // - The OpenWeather API key must be exported as a constant named `weatherApiKey`
-const String weatherApiKey = 'ibe9c3b7e8fb0235f67e628b885cb47e7';
+const String weatherApiKey = 'be9c3b7e8fb0235f67e628b885cb47e7';
 
   // - The current weather endpoint must be exported as a constant named `currentWeatherEndpoint` with a value that matches the provided format `https://api.openweathermap.org/data/2.5/weather`.
 const String currentWeatherEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
