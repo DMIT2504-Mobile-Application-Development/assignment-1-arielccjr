@@ -24,11 +24,11 @@ class CurrentWeather {
     required DateTime sunrise,
     required DateTime sunset,
   })  : _city = '',
-        _description = '',
-        _currentTemp = 0.0,
-        _currentTime = DateTime.now(),
-        _sunrise = DateTime.now(),
-        _sunset = DateTime.now() {
+        _description = description,
+        _currentTemp = currentTemp,
+        _currentTime = currentTime,
+        _sunrise = sunrise,
+        _sunset = sunset {
     this.city = city;
     this.description = description;
     this.currentTemp = currentTemp;
@@ -98,7 +98,7 @@ class CurrentWeather {
   //    - setter for sunset must ensure sunset is on the same day as currentTemp and not before sunrise
   //      - throw an `Exception` with message 'Sunset must be on the same day as current time' for the former
   set sunset(DateTime value) {
-    if (value.day != currentTime.day) {
+    if (value.day != _currentTime.day) {
       throw Exception('Sunset must be on the same day as current time');
     }
   //      - throw an `Exception` with message 'Sunset cannot be before sunset' for the latter
@@ -110,7 +110,7 @@ class CurrentWeather {
 
 //  - Must have a factory constructor that accepts a single `dynamic` data param representing the OpenWeather data object for the current weather
 //    - The method must parse out the required fields for the generative constructor and use the generative constructor to produce the object to return
-  factory CurrentWeather.fromOpenWeatherData(dynamic data) {
+  factory CurrentWeather.fromJson(dynamic data) {
     final city = data['name'];
     final description = data['weather'][0]['description'];
     final currentTemp = data['main']['temp'].toDouble();
@@ -131,6 +131,6 @@ class CurrentWeather {
 //    - `City: <city>, Description: <description>, Current Temperature: <currentTemp>, Current Time: <currentTime>, Sunrise: <sunrise>, Sunset: <sunset>'` where the angle brackets/values must be replaced with the actual member values.
   @override
   String toString() {
-    return 'City: $_city, Description: $_description, Current Temperature: $_currentTemp, Current Time: $_currentTime, Sunrise: $_sunrise, Sunset: $_sunset';
+    return 'City: $city, Description: $description, Current Temperature: $currentTemp, Current Time: $currentTime, Sunrise: $sunrise, Sunset: $sunset';
   }
 }
