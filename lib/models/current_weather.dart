@@ -35,10 +35,17 @@ class CurrentWeather {
     this.sunset = sunset;
   }
 
+  //   - The following getters and setters for the private members
+  //     - all private members must have a getter
+  String get city => _city;
+  String get description => _description;
+  double get currentTemp => _currentTemp;
+  DateTime get currentTime => _currentTime;
+  DateTime get sunrise => _sunrise;
+  DateTime get sunset => _sunset;
+
 }
 
-//   - The following getters and setters for the private members
-//     - all private members must have a getter
 //     
 //     - setter for city must ensure city is not empty
 //       - throw an `Exception` with message 'City cannot be empty'
@@ -55,7 +62,6 @@ class CurrentWeather {
 //      - throw an `Exception` with message 'Sunset must be on the same day as current time' for the former
 //      - throw an `Exception` with message 'Sunset cannot be before sunset' for the latter
 
-//  - Must have a generative constructor with required named params for each of the members
 
 //  - Must have a factory constructor that accepts a single `dynamic` data param representing the OpenWeather data object for the current weather
 //    - The method must parse out the required fields for the generative constructor and use the generative constructor to produce the object to return
